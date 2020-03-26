@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './components';
 import { PagesModule } from './pages/pages.module';
 import { ThemeModule } from './theme/theme.module';
+import { CoreModule } from './@core/core.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ThemeModule } from './theme/theme.module';
     NbLayoutModule,
     ComponentsModule,
     PagesModule,
+    CoreModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

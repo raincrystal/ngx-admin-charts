@@ -31,8 +31,28 @@ import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
+import {
+  CapitalizePipe,
+  NumberWithCommasPipe,
+  PluralPipe,
+  RoundPipe,
+  TimingPipe } from './pipes';
 
 @NgModule({
+  declarations: [
+    CapitalizePipe,
+    PluralPipe,
+    RoundPipe,
+    TimingPipe,
+    NumberWithCommasPipe,
+  ],
+  exports: [
+    CapitalizePipe,
+    PluralPipe,
+    RoundPipe,
+    TimingPipe,
+    NumberWithCommasPipe,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

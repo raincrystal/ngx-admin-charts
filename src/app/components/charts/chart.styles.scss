@@ -3,7 +3,9 @@
 @import '../../theme/styles/themes';
 
 @include nb-install-component() {
-  app-echarts-area-stack, {
+  app-echarts-area-stack,
+  app-echarts-line,
+  app-echarts-area-stack {
     display: block;
     height: nb-theme(card-height-medium);
     width: 100%;
@@ -12,17 +14,5 @@
   ::ng-deep .echart {
     height: 100%;
     width: 100%;
-  }
-
-  app-chartjs-bar {
-    display: block;
-    height: nb-theme(card-height-medium);
-    width: 100%;
-
-    ::ng-deep chart {
-      display: block;
-      height: 100%;
-      width: 100%;
-    }
   }
 }

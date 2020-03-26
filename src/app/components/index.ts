@@ -19,31 +19,48 @@ import {
   NbThemeService,
   NbColorHelper,
   NbCardModule,
-  NbThemeModule,
+  NbTabsetModule,
+  NbRadioModule,
+  NbListModule,
 } from '@nebular/theme';
 import { NbSecurityModule, NbAccessChecker } from '@nebular/security';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ChartModule } from 'angular2-chartjs';
+import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './header/header.component';
-import { ChartjsBarComponent } from './charts/chartjs-bar.component';
 import { EchartsAreaStackComponent } from './charts/echarts-area-stack.component';
 import { ThemeModule } from '../theme/theme.module';
+import { TemperatureComponent } from './temperature/temperature.component';
+import { TemperatureDraggerComponent } from './temperature/temperature-dragger/temperature-dragger.component';
+import { CoreModule } from '../@core/core.module';
+import { EchartsLineComponent } from './charts/echarts-line.component';
+import { ECommerceUserActivityComponent } from './user-activity/user-activity.component';
+import { EchartsBarComponent } from './charts/echarts-bar.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    ChartjsBarComponent,
+    EchartsBarComponent,
     EchartsAreaStackComponent,
+    TemperatureDraggerComponent,
+    TemperatureComponent,
+    EchartsLineComponent,
+    ECommerceUserActivityComponent,
   ],
   exports: [
     HeaderComponent,
-    ChartjsBarComponent,
+    EchartsBarComponent,
     EchartsAreaStackComponent,
+    TemperatureDraggerComponent,
+    TemperatureComponent,
+    EchartsLineComponent,
+    ECommerceUserActivityComponent,
   ],
   imports: [
+    ThemeModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
@@ -61,7 +78,12 @@ import { ThemeModule } from '../theme/theme.module';
     NbSecurityModule,
     ChartModule,
     NgxEchartsModule,
-    ThemeModule.forRoot(),
+    NbCardModule,
+    NbTabsetModule,
+    NbRadioModule,
+    FormsModule,
+    CoreModule,
+    NbListModule
   ],
   providers: [
     NbSidebarService,
