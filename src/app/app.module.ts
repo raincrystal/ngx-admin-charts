@@ -6,20 +6,22 @@ import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PagesModule } from './pages/pages.module';
+import { ThemeModule } from './theme/theme.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'dark' }),
+    ThemeModule.forRoot(),
+    NbThemeModule,
     NbLayoutModule,
     ComponentsModule,
+    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

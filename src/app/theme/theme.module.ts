@@ -27,22 +27,12 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ChartModule } from 'angular2-chartjs';
 
-import { HeaderComponent } from './header/header.component';
-import { ChartjsBarComponent } from './charts/chartjs-bar.component';
-import { EchartsAreaStackComponent } from './charts/echarts-area-stack.component';
-import { ThemeModule } from '../theme/theme.module';
+import { DEFAULT_THEME } from './styles/theme.default';
+import { COSMIC_THEME } from './styles/theme.cosmic';
+import { CORPORATE_THEME } from './styles/theme.corporate';
+import { DARK_THEME } from './styles/theme.dark';
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    ChartjsBarComponent,
-    EchartsAreaStackComponent,
-  ],
-  exports: [
-    HeaderComponent,
-    ChartjsBarComponent,
-    EchartsAreaStackComponent,
-  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -61,7 +51,6 @@ import { ThemeModule } from '../theme/theme.module';
     NbSecurityModule,
     ChartModule,
     NgxEchartsModule,
-    ThemeModule.forRoot(),
   ],
   providers: [
     NbSidebarService,
@@ -76,4 +65,20 @@ import { ThemeModule } from '../theme/theme.module';
     NbCardModule,
   ],
 })
-export class ComponentsModule { }
+
+export class ThemeModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: ThemeModule,
+      providers: [
+        ...NbThemeModule.forRoot(
+          {
+            name: 'dark',
+          },
+          [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME ],
+        ).providers,
+      ],
+    } as ModuleWithProviders;
+  }
+}
+
