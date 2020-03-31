@@ -37,7 +37,10 @@
   </div>
   <div class="row">
     <div class="col-6">
-      <app-user-activity></app-user-activity>
+      <app-user-activity
+        *ngIf="qualityData"
+        [data]="qualityData"
+      ></app-user-activity>
     </div>
   </div>
 </div>

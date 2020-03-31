@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "server:mock": "npm run-script start --prefix ./mocks"
   },
   "private": true,
   "dependencies": {

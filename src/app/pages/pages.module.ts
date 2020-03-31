@@ -6,6 +6,7 @@ import { NbLayoutModule, NbCardModule } from '@nebular/theme';
 import { ComponentsModule } from '../components';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ThemeModule } from '../theme/theme.module';
+import { ServiceModule } from '../services/service.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ThemeModule } from '../theme/theme.module';
     NbLayoutModule,
     ComponentsModule,
     ThemeModule.forRoot(),
+    ServiceModule.forRoot(),
     NbCardModule,
   ],
   exports: [

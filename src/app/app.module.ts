@@ -23,7 +23,7 @@ import { CoreModule } from './@core/core.module';
     NbLayoutModule,
     ComponentsModule,
     PagesModule,
-    CoreModule.forRoot()
+    CoreModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
